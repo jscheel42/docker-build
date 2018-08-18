@@ -13,7 +13,10 @@ pipeline {
         always {}  
         success {}  
         failure {  
-            mail bcc: '', body: "<b>Example</b><br>\n\<br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br>URL: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "jscheel42@gmail.com";  
+            emailext subject: "${env.JOB_NAME} build #${env.BUILD_NUMBER} failed",
+                body: "${env.BUILD_URL}",
+                replyTo: 'jscheel42@gmail.com',
+                to: 'jscheel42@gmail.com' 
         }  
         unstable {}  
         changed {}  

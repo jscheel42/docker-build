@@ -1,4 +1,4 @@
-FROM jenkinsci/jnlp-slave:latest as build
+FROM jenkinsci/jnlp-slave:latest
 
 USER root
 

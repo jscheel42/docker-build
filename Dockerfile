@@ -1,4 +1,4 @@
-FROM jenkinsci/jnlp-slave:latest
+FROM jenkinsci/jnlp-slave:latest as build
 
 USER root
 
@@ -30,4 +30,3 @@ RUN apt-get update && apt-get install -y \
 
 # rust is love
 RUN curl -sSf https://static.rust-lang.org/rustup.sh | sh
-
